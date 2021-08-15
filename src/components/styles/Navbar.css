@@ -1,0 +1,27 @@
+.input-group button {
+	margin-left: -70px;
+	z-index: 100;
+}
+#navbar form {
+	width: 50%;
+}
+.user {
+	display: none;
+}
+.cart {
+	display: none;
+}
+#navbar ul li {
+	cursor: pointer;
+}
+@media (max-width: 990px) {
+	#navbar form {
+		width: 100%;
+	}
+	.user {
+		display: block;
+	}
+	.cart {
+		display: block;
+	}
+}
