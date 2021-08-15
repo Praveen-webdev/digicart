@@ -2,3 +2,9 @@
   margin: 0;
   padding: 0;
 }
+.shipping-text {
+  background-color: #1e2d7dff;
+  color: white;
+  border-bottom: 1px solid#46549FFF;
+  padding: 3px 0;
+}
