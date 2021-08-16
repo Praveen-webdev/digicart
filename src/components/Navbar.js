@@ -5,16 +5,16 @@ import { Link } from "react-router-dom";
 function Navbar() {
 	return (
 		<nav className="navbar navbar-expand-lg navbar-dark sticky-top ">
-			<h2 className="navbar-brand">
+			<h2 className="navbar-brand" style={{ cursor: "default" }}>
 				<i class="fab fa-digital-ocean"></i>Digicart
 			</h2>
-			<div className="user ">
+			<Link className="user ">
 				<i class="fal fa-user"></i>
-			</div>
-			<div className="cart ">
+			</Link>
+			<Link className="cart ">
 				<span>0</span>
 				<i class="fas fa-cart-plus"></i>
-			</div>
+			</Link>
 			<button
 				class="navbar-toggler"
 				type="button"
