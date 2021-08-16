@@ -8,10 +8,10 @@ function Navbar() {
 			<h2 className="navbar-brand" style={{ cursor: "default" }}>
 				<i class="fab fa-digital-ocean"></i>Digicart
 			</h2>
-			<Link className="user ">
+			<Link className="user  ">
 				<i class="fal fa-user"></i>
 			</Link>
-			<Link className="cart ">
+			<Link className="cart  ">
 				<span>0</span>
 				<i class="fas fa-cart-plus"></i>
 			</Link>
