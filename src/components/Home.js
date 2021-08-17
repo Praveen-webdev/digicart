@@ -1,5 +1,7 @@
 import React from "react";
 import "./styles/Home.css";
+import products from "./data.js";
+import ProductCard from "./ProductCard.jsx";
 
 function Home() {
 	return (
@@ -83,6 +85,11 @@ function Home() {
 					></span>
 					<span class="sr-only">Next</span>
 				</a>
+			</div>
+			<div className="product-wrapper">
+				{products.map((product) => (
+					<ProductCard key={product.id} product={product} />
+				))}
 			</div>
 		</section>
 	);

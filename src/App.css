@@ -19,3 +19,24 @@
 .metal-btn:hover {
   background: rgba(3, 170, 208, 0.8);
 }
+.product-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card-wrapper {
+  width: 260px;
+  height: 500px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px;
+}
+.product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.addcart-btn {
+}
