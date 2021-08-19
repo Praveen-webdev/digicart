@@ -5,6 +5,7 @@ import ScrollRestoration from "react-scroll-restoration";
 import Navbar from "./components/Navbar.js";
 import Footer from "./components/Footer.js";
 import Home from "./components/Home.js";
+import Cart from "./components/Cart.jsx";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/cart" component={Cart} />
         </Switch>
         <Footer />
       </div>

@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./styles/Navbar.css";
 import { Link } from "react-router-dom";
+import CartContext from "../context/cart-context";
 
 function Navbar() {
+	const { cartItems } = useContext(CartContext);
 	return (
 		<nav className="navbar navbar-expand-lg navbar-dark sticky-top ">
 			<h2 className="navbar-brand" style={{ cursor: "default" }}>
@@ -11,8 +13,8 @@ function Navbar() {
 			<Link className="user  ">
 				<i class="fal fa-user"></i>
 			</Link>
-			<Link className="cart  ">
-				<span>0</span>
+			<Link className="cart  " to="/cart">
+				<span>{cartItems.length}</span>
 				<i class="fas fa-cart-plus"></i>
 			</Link>
 			<button

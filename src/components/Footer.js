@@ -3,9 +3,9 @@ import React from "react";
 function Footer() {
 	return (
 		<div className="footer sticky-bottom">
-			<h5 className="text-center">
+			<h6 className="text-center">
 				Developed by <span>Praveen</span>
-			</h5>
+			</h6>
 		</div>
 	);
 }

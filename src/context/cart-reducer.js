@@ -5,7 +5,10 @@ const cartReducer = (state, action) => {
 		case Add_Cart:
 			return {
 				...state,
-				cartItems: [...state.cartItems, action.payload],
+				cartItems: [
+					...state.cartItems,
+					{ ...action.payload.product, ...action.payload.quantity },
+				],
 			};
 		case Remove_Cart:
 			return { ...state };
