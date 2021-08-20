@@ -29,7 +29,11 @@ function SubTotal() {
 				</strong>
 			</h2>
 			{totalAmount.length !== 0 ? (
-				<Link to="/thanking" className="metal-btn mb-3">
+				<Link
+					to="/thanking"
+					style={{ textDecoration: "none" }}
+					className="metal-btn mb-3"
+				>
 					Proceed to Checkout
 				</Link>
 			) : (
