@@ -5,7 +5,7 @@ import ProductCard from "./ProductCard.jsx";
 import CartContext from "../context/cart-context.js";
 
 function Home() {
-	const { search } = useContext(CartContext);
+	const { search, setSearch } = useContext(CartContext);
 	return (
 		<section className="home">
 			<div
@@ -47,7 +47,10 @@ function Home() {
 								Discover our selection of the best headphones of
 								the year
 							</p>
-							<button className="metal-btn">
+							<button
+								className="metal-btn"
+								onClick={() => setSearch("headphones")}
+							>
 								Shop All Headphones
 							</button>
 						</div>
@@ -57,8 +60,11 @@ function Home() {
 						<div class="carousel-caption  d-md-block">
 							<h5>New Portable Speakers</h5>
 							<p>Discover the brand new speakers ,by JBL</p>
-							<button className="metal-btn">
-								Shop JBL Clip 3
+							<button
+								className="metal-btn"
+								onClick={() => setSearch("speakers")}
+							>
+								Shop All Speakers
 							</button>
 						</div>
 					</div>
