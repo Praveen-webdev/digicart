@@ -18,7 +18,7 @@ const Rating = ({ rating, review }) => {
 					></i>
 				))}
 			</span>
-			<span className="reviews">
+			<span className="reviews" style={{ color: "#89817DFF" }}>
 				{review === 0 ? "No review" : `${review} reviews`}
 			</span>
 		</div>

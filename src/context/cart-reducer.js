@@ -1,4 +1,4 @@
-import { Add_Cart, Remove_Cart } from "./cart-actions.js";
+import { Add_Cart, Remove_Cart, lone_Total } from "./cart-actions.js";
 
 const cartReducer = (state, action) => {
 	switch (action.type) {
@@ -11,7 +11,17 @@ const cartReducer = (state, action) => {
 				],
 			};
 		case Remove_Cart:
-			return { ...state };
+			return {
+				...state,
+				cartItems: state.cartItems.filter(
+					(item) => item.id !== action.payload
+				),
+			};
+		case lone_Total:
+			return {
+				...state,
+				total: [...action.payload],
+			};
 		default:
 			return state;
 	}

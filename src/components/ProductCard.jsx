@@ -31,7 +31,7 @@ function ProductCard({ product }) {
 						class="count"
 						name="qty"
 						value={counter}
-						disabled="true"
+						disabled={true}
 					/>
 					<span
 						class="plus bg-dark"

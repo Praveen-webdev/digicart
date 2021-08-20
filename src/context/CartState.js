@@ -3,8 +3,8 @@ import CartContext from "./cart-context.js";
 import cartReducer from "./cart-reducer.js";
 
 const initialState = {
-	isAdded: false,
 	cartItems: [],
+	total: [],
 };
 
 function CartState(props) {
@@ -12,6 +12,7 @@ function CartState(props) {
 
 	const memoContext = useMemo(() => {
 		return {
+			totalAmount: state.total,
 			cartItems: state.cartItems,
 			dispatch,
 		};

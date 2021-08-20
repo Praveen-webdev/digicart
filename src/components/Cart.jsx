@@ -1,19 +1,22 @@
 import React, { useContext } from "react";
 import CartContext from "../context/cart-context";
 import AddedProducts from "./AddedProducts.js";
+import Total from "./Total.jsx";
 
 function Cart() {
 	const { cartItems } = useContext(CartContext);
-	console.log(cartItems);
 	return (
-		<div className="product-wrapper">
-			{cartItems.length === 0 ? (
-				<div></div>
-			) : (
-				cartItems.map((item) => (
-					<AddedProducts key={item.id} item={item} />
-				))
-			)}
+		<div>
+			<div className="product-wrapper">
+				{cartItems.length === 0 ? (
+					<div></div>
+				) : (
+					cartItems.map((item, idx) => (
+						<AddedProducts key={item.id} item={item} idx={idx} />
+					))
+				)}
+			</div>
+			<Total />
 		</div>
 	);
 }

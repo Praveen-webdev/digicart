@@ -53,6 +53,12 @@ body {
   display: flex;
   flex-direction: column;
 }
+.product-info h5 {
+  color: #1e2d7dff;
+}
+.product-info h4 {
+  color: #00badbff;
+}
 #quantity {
   text-align: center;
 }
