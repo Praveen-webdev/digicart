@@ -16,9 +16,9 @@ function AddedProducts({ item, idx }) {
 				</h6>
 				<h4 style={{ color: "#FFA41CFF" }}>
 					Total :{" "}
-					<span style={{ color: "#B12704FF" }}>
+					<strong style={{ color: "#B12704FF" }}>
 						&#8377;{totalAmount[idx]}
-					</span>
+					</strong>
 				</h4>
 				<button
 					id="cart-btn"

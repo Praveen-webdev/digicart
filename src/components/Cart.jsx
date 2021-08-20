@@ -3,14 +3,15 @@ import CartContext from "../context/cart-context";
 import AddedProducts from "./AddedProducts.js";
 import Total from "./Total.jsx";
 import SubTotal from "./SubTotal.js";
+import emptyCart from "../images/vector-illustration-icon-shopping-concept-260nw-502037047.jpg";
 
 function Cart() {
 	const { cartItems } = useContext(CartContext);
 	return (
 		<div>
-			<div className="product-wrapper">
+			<div className="product-wrapper added-products">
 				{cartItems.length === 0 ? (
-					<div></div>
+					<img src={emptyCart} alt="emptycart" />
 				) : (
 					cartItems.map((item, idx) => (
 						<AddedProducts key={item.id} item={item} idx={idx} />
