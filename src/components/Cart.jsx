@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import CartContext from "../context/cart-context";
 import AddedProducts from "./AddedProducts.js";
 import Total from "./Total.jsx";
+import SubTotal from "./SubTotal.js";
 
 function Cart() {
 	const { cartItems } = useContext(CartContext);
@@ -17,6 +18,7 @@ function Cart() {
 				)}
 			</div>
 			<Total />
+			<SubTotal />
 		</div>
 	);
 }

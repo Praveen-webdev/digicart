@@ -8,17 +8,17 @@ function Navbar() {
 	return (
 		<nav className="navbar navbar-expand-lg navbar-dark sticky-top ">
 			<h2 className="navbar-brand" style={{ cursor: "default" }}>
-				<i class="fab fa-digital-ocean"></i>Digicart
+				<i className="fab fa-digital-ocean"></i>Digicart
 			</h2>
 			<Link className="user  ">
-				<i class="fal fa-user"></i>
+				<i className="fal fa-user"></i>
 			</Link>
 			<Link className="cart  " to="/cart">
 				<span>{cartItems.length}</span>
-				<i class="fas fa-cart-plus"></i>
+				<i className="fas fa-cart-plus"></i>
 			</Link>
 			<button
-				class="navbar-toggler"
+				className="navbar-toggler"
 				type="button"
 				data-toggle="collapse"
 				data-target="#navbarTogglerDemo02"
@@ -26,7 +26,7 @@ function Navbar() {
 				aria-expanded="false"
 				aria-label="Toggle navigation"
 			>
-				<span class="navbar-toggler-icon"></span>
+				<span className="navbar-toggler-icon"></span>
 			</button>
 			<div className="navbar-collapse collapse" id="navbarTogglerDemo02">
 				<ul
@@ -36,9 +36,9 @@ function Navbar() {
 					<Link to="/">
 						<li className="nav-item active">Home</li>
 					</Link>
-					<li class="nav-item dropdown">
+					<li className="nav-item dropdown">
 						<a
-							class="nav-link dropdown-toggle"
+							className="nav-link dropdown-toggle"
 							href="#"
 							id="navbarDropdown"
 							role="button"
@@ -49,7 +49,7 @@ function Navbar() {
 							All products
 						</a>
 						<div
-							class="dropdown-menu"
+							className="dropdown-menu"
 							aria-labelledby="navbarDropdown"
 						>
 							<Link
@@ -58,7 +58,7 @@ function Navbar() {
 							>
 								Headphones
 							</Link>
-							<div class="dropdown-divider"></div>
+							<div className="dropdown-divider"></div>
 							<Link
 								className="dropdown-item"
 								style={{ color: "#1e2d7dff" }}
@@ -82,7 +82,7 @@ function Navbar() {
 							placeholder="Search products..."
 						/>
 						<button className="btn ">
-							<i class="fab fa-searchengin"></i>
+							<i className="fab fa-searchengin"></i>
 						</button>
 					</div>
 				</form>

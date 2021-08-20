@@ -1,5 +1,5 @@
 import React from "react";
-import v4 from "uuid";
+import { v4 } from "uuid";
 
 const Rating = ({ rating, review }) => {
 	return (
@@ -7,6 +7,7 @@ const Rating = ({ rating, review }) => {
 			<span className="rating">
 				{[1, 2, 3, 4, 5].map((rate) => (
 					<i
+						key={v4()}
 						style={{ color: "#FFBD00FF" }}
 						className={
 							rating + 1 === rate + 0.5
