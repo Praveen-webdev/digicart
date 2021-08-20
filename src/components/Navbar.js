@@ -1,9 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./styles/Navbar.css";
 import { Link } from "react-router-dom";
 import CartContext from "../context/cart-context";
 
 function Navbar() {
+	const [input, setInput] = useState("");
+	const [search, setSearch] = useState("");
+
 	const { cartItems } = useContext(CartContext);
 	return (
 		<nav className="navbar navbar-expand-lg navbar-dark sticky-top ">

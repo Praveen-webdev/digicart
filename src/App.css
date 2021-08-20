@@ -7,9 +7,10 @@ body {
   background-color: #e5e5e5;
 }
 .shipping-text {
-  background-color: #1e2d7dff;
+  background-color: #010669;
   color: white;
   border-bottom: 1px solid#46549FFF;
+
   padding: 3px 0;
 }
 .metal-btn {
