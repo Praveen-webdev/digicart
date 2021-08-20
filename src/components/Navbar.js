@@ -1,13 +1,15 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import "./styles/Navbar.css";
 import { Link } from "react-router-dom";
 import CartContext from "../context/cart-context";
 
 function Navbar() {
-	const [input, setInput] = useState("");
-	const [search, setSearch] = useState("");
-
-	const { cartItems } = useContext(CartContext);
+	const { cartItems, setInput, setSearch, input } = useContext(CartContext);
+	const submitHandler = (e) => {
+		setSearch(input);
+		e.preventDefault();
+		setInput("");
+	};
 	return (
 		<nav className="navbar navbar-expand-lg navbar-dark sticky-top ">
 			<h2 className="navbar-brand" style={{ cursor: "default" }}>
@@ -36,7 +38,7 @@ function Navbar() {
 					className="navbar-nav mr-auto mt-2 mt-lg-0 ml-auto"
 					id="navbaritems"
 				>
-					<Link to="/">
+					<Link to="/" onClick={() => setSearch("")}>
 						<li className="nav-item active">Home</li>
 					</Link>
 					<li className="nav-item dropdown">
@@ -57,6 +59,7 @@ function Navbar() {
 						>
 							<Link
 								className="dropdown-item"
+								onClick={() => setSearch("headphones")}
 								style={{ color: "#1e2d7dff" }}
 							>
 								Headphones
@@ -64,6 +67,7 @@ function Navbar() {
 							<div className="dropdown-divider"></div>
 							<Link
 								className="dropdown-item"
+								onClick={() => setSearch("speakers")}
 								style={{ color: "#1e2d7dff" }}
 							>
 								Portable speakers
@@ -77,12 +81,14 @@ function Navbar() {
 						<li className="nav-item ">Contact</li>
 					</Link>
 				</ul>
-				<form className=" my-2 my-lg-0">
+				<form className="my-2 my-lg-0" onSubmit={submitHandler}>
 					<div className="input-group">
 						<input
+							onChange={(e) => setInput(e.target.value)}
 							type="text"
 							className="form-control"
 							placeholder="Search products..."
+							value={input}
 						/>
 						<button className="btn ">
 							<i className="fab fa-searchengin"></i>

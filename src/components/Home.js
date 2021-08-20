@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./styles/Home.css";
 import products from "./data.js";
 import ProductCard from "./ProductCard.jsx";
+import CartContext from "../context/cart-context.js";
 
 function Home() {
+	const { search } = useContext(CartContext);
 	return (
 		<section className="home">
 			<div
@@ -87,9 +89,20 @@ function Home() {
 				</a>
 			</div>
 			<div className="product-wrapper">
-				{products.map((product) => (
-					<ProductCard key={product.id} product={product} />
-				))}
+				{products
+					.filter((item, idx) => {
+						if (search == "headphones".toLowerCase())
+							return item.category === "Headphones";
+						else if (search == "speakers".toLowerCase())
+							return item.category === "Speakers";
+						else
+							return item.name
+								.toLowerCase()
+								.includes(search.toLowerCase());
+					})
+					.map((product) => (
+						<ProductCard key={product.id} product={product} />
+					))}
 			</div>
 		</section>
 	);

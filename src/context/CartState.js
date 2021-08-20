@@ -1,4 +1,4 @@
-import React, { useReducer, useMemo } from "react";
+import React, { useReducer, useMemo, useState } from "react";
 import CartContext from "./cart-context.js";
 import cartReducer from "./cart-reducer.js";
 
@@ -8,6 +8,9 @@ const initialState = {
 };
 
 function CartState(props) {
+	const [input, setInput] = useState("");
+	const [search, setSearch] = useState("");
+
 	const [state, dispatch] = useReducer(cartReducer, initialState);
 
 	const memoContext = useMemo(() => {
@@ -15,8 +18,20 @@ function CartState(props) {
 			totalAmount: state.total,
 			cartItems: state.cartItems,
 			dispatch,
+			input,
+			setInput,
+			search,
+			setSearch,
 		};
-	}, [state, dispatch]);
+	}, [
+		state.total,
+		state.cartItems,
+		dispatch,
+		input,
+		setInput,
+		search,
+		setSearch,
+	]);
 	return (
 		<CartContext.Provider value={memoContext}>
 			{props.children}
