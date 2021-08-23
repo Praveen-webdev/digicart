@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./styles/Thanking.css";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import CartContext from "../context/cart-context.js";
 
 function Checkout() {
+	const { dispatch } = useContext(CartContext);
+	const history = useHistory();
+	const goHome = () => {
+		dispatch({ type: "Reset" });
+		history.push("/");
+	};
 	return (
 		<div className="content">
 			<div className="wrapper-1">
@@ -13,9 +20,13 @@ function Checkout() {
 						{" "}
 						Join with us to purchase latest products in the world...{" "}
 					</p>
-					<Link to="/" className="go-home">
+					<button
+						onClick={goHome}
+						style={{ cursor: "pointer" }}
+						className="go-home"
+					>
 						Continue to shop
-					</Link>
+					</button>
 				</div>
 			</div>
 		</div>

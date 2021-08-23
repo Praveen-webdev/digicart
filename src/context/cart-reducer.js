@@ -22,6 +22,8 @@ const cartReducer = (state, action) => {
 				...state,
 				total: [...action.payload],
 			};
+		case "Reset":
+			return { cartItems: [], total: [] };
 		default:
 			return state;
 	}
